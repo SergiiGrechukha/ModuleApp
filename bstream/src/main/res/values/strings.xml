@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BStream</string>
+    <string name="stream_b_name">Stream B</string>
+</resources>
