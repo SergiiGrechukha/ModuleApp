@@ -36,5 +36,5 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     //todo consider using api
-    implementation project(':core')
+    api project(':core')
 }
