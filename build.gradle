@@ -8,15 +8,17 @@ ext {
     minSDK = 18
     targetSDK = 25
 
+
 }
 
 buildscript {
     ext.kotlin_version = '1.1.2-4'
-    ext.kotlin_version = '1.1.2-2'
     ext.androidPluginVer = '3.0.0-alpha1'
+    ext.daggerVer = '2.9'
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$androidPluginVer"
