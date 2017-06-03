@@ -1,9 +1,9 @@
-package com.techery.astream.di
+package com.techery.bstream.di
 
 import dagger.Module
 
 @Module
-class StreamAModule {
+class StreamBModule {
 
     //provide stuff here
 }

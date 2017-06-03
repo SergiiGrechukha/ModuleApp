@@ -6,11 +6,11 @@ import dagger.Subcomponent
 
 @ViewScope
 @Subcomponent(modules = arrayOf(ShellModule::class))
-interface ShellComponent{
+interface ShellComponent {
 
     @Subcomponent.Builder
     interface Builder {
-        fun build() : ShellComponent
+        fun build(): ShellComponent
     }
 
     fun inject(activity: MainActivity)

@@ -5,12 +5,12 @@ import dagger.Subcomponent
 
 @StreamAScope
 @Subcomponent(modules = arrayOf(StreamAModule::class))
-interface StreamAComponent{
+interface StreamAComponent {
 
     fun inject(activity: AStreamActivity)
 
     @Subcomponent.Builder
     interface Builder {
-        fun build() : StreamAComponent
+        fun build(): StreamAComponent
     }
 }

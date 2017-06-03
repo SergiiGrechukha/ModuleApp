@@ -1,8 +1,8 @@
 package com.techery.astream
 
 import android.annotation.SuppressLint
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.techery.astream.di.StreamACommon
 import com.techery.core.SomethingUseful
 import kotlinx.android.synthetic.main.activity_a_stream.*
@@ -21,8 +21,7 @@ class AStreamActivity : AppCompatActivity() {
     }
 
     private fun setUpUI() {
-//     streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${SomethingUseful().getSomethingUseful()}"
-     streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${somethingUseful.getSomethingUseful()}"
+        streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${somethingUseful.getSomethingUseful()}"
     }
 
     @SuppressLint("WrongConstant")
