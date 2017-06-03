@@ -1,8 +1,8 @@
 package com.techery.moduleapp
 
 import android.app.Application
-import com.techery.moduleapp.di.common.CommonComponent
-import com.techery.moduleapp.di.common.DaggerCommonComponent
+import routing.di.common.CommonComponent
+import routing.di.common.DaggerCommonComponent
 
 class App : Application() {
 
