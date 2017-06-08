@@ -1,4 +1,4 @@
-package routing.di.common
+package di.common
 
 import com.techery.bstream.di.StreamBCommon
 import com.techery.moduleapp.App

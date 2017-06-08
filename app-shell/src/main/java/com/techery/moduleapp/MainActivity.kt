@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.techery.moduleapp.routing.Router
 import kotlinx.android.synthetic.main.activity_main.*
-import routing.di.common.CommonComponent
+import di.common.CommonComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

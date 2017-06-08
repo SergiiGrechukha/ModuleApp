@@ -1,4 +1,4 @@
-package routing.di.common
+package di.common
 
 import com.techery.moduleapp.routing.Router
 import dagger.Module

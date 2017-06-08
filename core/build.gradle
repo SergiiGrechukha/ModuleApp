@@ -36,6 +36,8 @@ dependencies {
 
     compile "com.google.dagger:dagger:$daggerVer"
     kapt "com.google.dagger:dagger-compiler:$daggerVer"
+
+    compile 'com.github.salomonbrys.kodein:kodein:3.4.1'
 }
 repositories {
     mavenCentral()
