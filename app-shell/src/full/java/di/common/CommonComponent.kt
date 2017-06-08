@@ -1,4 +1,4 @@
-package routing.di.common
+package di.common
 
 import com.techery.astream.di.StreamACommon
 import com.techery.bstream.di.StreamBCommon
