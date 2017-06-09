@@ -1,7 +1,6 @@
 package com.techery.core
 
-import javax.inject.Inject
 
-open class SomethingUseful @Inject constructor() {
+open class SomethingUseful {
     fun getSomethingUseful() = SomethingUseful::class.simpleName
 }
