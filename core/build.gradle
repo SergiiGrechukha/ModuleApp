@@ -34,10 +34,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile "com.google.dagger:dagger:$daggerVer"
-    kapt "com.google.dagger:dagger-compiler:$daggerVer"
-
-    compile 'com.github.salomonbrys.kodein:kodein:3.4.1'
+    compile 'com.github.salomonbrys.kodein:kodein:4.0.0'
+    compile 'com.github.salomonbrys.kodein:kodein-conf:4.0.0'
+    compile 'com.github.salomonbrys.kodein:kodein-android:4.0.0'
 }
 repositories {
     mavenCentral()

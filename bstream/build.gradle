@@ -36,9 +36,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
-    compile "com.google.dagger:dagger:$daggerVer"
-    kapt "com.google.dagger:dagger-compiler:$daggerVer"
-
     //todo consider using api
-    implementation project(':core')
+    api project(':core')
 }

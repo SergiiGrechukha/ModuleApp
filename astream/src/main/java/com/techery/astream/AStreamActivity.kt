@@ -3,14 +3,21 @@ package com.techery.astream
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.techery.astream.di.StreamACommon
+import com.github.salomonbrys.kodein.KodeinAware
+import com.github.salomonbrys.kodein.KodeinInjector
+import com.github.salomonbrys.kodein.conf.ConfigurableKodein
+import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.with
+import com.techery.core.SomethingModule
 import com.techery.core.SomethingUseful
 import kotlinx.android.synthetic.main.activity_a_stream.*
-import javax.inject.Inject
 
-class AStreamActivity : AppCompatActivity() {
+class AStreamActivity : AppCompatActivity(), KodeinAware {
 
-    @Inject lateinit var somethingUseful: SomethingUseful
+    override val kodein = ConfigurableKodein()
+
+    private val injector = KodeinInjector()
+    private val somethingUseful: SomethingUseful by injector.with(this).instance<SomethingUseful>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +33,12 @@ class AStreamActivity : AppCompatActivity() {
 
     @SuppressLint("WrongConstant")
     private fun injectDeps() {
-        val component = (application.getSystemService("Dagger") as StreamACommon?)
-        if (component != null) {
-            component.streamAComponent().build().inject(this)
-
+        kodein.addImport(SomethingModule().coreModule)
+        injector.inject(kodein)
+        val kodeinMain = (application.getSystemService("Kodein") as ConfigurableKodein?)
+        if (kodeinMain != null) {
+            kodeinMain.addExtend(kodein)
+            injector.inject(kodeinMain)
         }
     }
 }
