@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.with
+import com.techery.core.iNeedSomeKodein
 import com.techery.moduleapp.routing.Router
 import com.techery.moduleapp.di.KodeinCommonModule
 import kotlinx.android.synthetic.main.activity_main.*
