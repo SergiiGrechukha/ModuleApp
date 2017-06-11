@@ -14,7 +14,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.techery.bstream.BStreamTestRunner"
 
     }
     buildTypes {
@@ -38,4 +39,8 @@ dependencies {
 
     //todo consider using api
     api project(':core')
+
+    androidTestCompile "org.mockito:mockito-core:1.9.5"
+    androidTestCompile "com.google.dexmaker:dexmaker:1.0"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.0"
 }

@@ -37,6 +37,9 @@ dependencies {
     compile 'com.github.salomonbrys.kodein:kodein:4.0.0'
     compile 'com.github.salomonbrys.kodein:kodein-conf:4.0.0'
     compile 'com.github.salomonbrys.kodein:kodein-android:4.0.0'
+
+
+
 }
 repositories {
     mavenCentral()

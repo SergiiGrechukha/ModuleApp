@@ -8,8 +8,11 @@ import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.conf.ConfigurableKodein
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.with
-import com.techery.core.SomethingModule
+import com.techery.astream.di.BStreamModule
+import com.techery.core.App
+import com.techery.core.ApplicationInterface
 import com.techery.core.SomethingUseful
+import com.techery.core.iNeedSomeKodein
 import kotlinx.android.synthetic.main.activity_b_stream.*
 
 class BStreamActivity : AppCompatActivity(), KodeinAware {
@@ -33,12 +36,8 @@ class BStreamActivity : AppCompatActivity(), KodeinAware {
 
     @SuppressLint("WrongConstant")
     private fun injectDeps() {
-        kodein.addImport(SomethingModule().coreModule)
-        injector.inject(kodein)
-        val kodeinMain = (application.getSystemService("Kodein") as ConfigurableKodein?)
-        if (kodeinMain != null) {
-            kodeinMain.addExtend(kodein)
-            injector.inject(kodeinMain)
-        }
+        (application as App).addModule(BStreamModule().bStreamModule)
+        val kodeinMain = this.iNeedSomeKodein()
+        injector.inject(kodeinMain)
     }
 }

@@ -1,6 +1,6 @@
 package com.techery.core
 
 
-open class SomethingUseful {
-    fun getSomethingUseful() = SomethingUseful::class.simpleName
+open class SomethingUseful{
+    open fun getSomethingUseful() = SomethingUseful::class.simpleName
 }
