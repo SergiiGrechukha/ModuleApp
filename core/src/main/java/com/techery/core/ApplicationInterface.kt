@@ -5,9 +5,5 @@ import com.github.salomonbrys.kodein.conf.ConfigurableKodein
 
 interface ApplicationInterface {
 
-    fun getSomeKodein(): ConfigurableKodein
-
-    fun setSomeKodein(kodein: ConfigurableKodein)
-
     fun addModule(module: Kodein.Module)
 }

@@ -6,11 +6,8 @@ import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.scopedSingleton
 import com.techery.core.SomethingUseful
 
-class AStreamModule {
-
-    val aStreamModule = Kodein.Module {
-        bind<SomethingUseful>() with scopedSingleton(androidActivityScope) {
-            SomethingUseful()
-        }
+val aStreamModule = Kodein.Module(allowSilentOverride = true) {
+    bind<SomethingUseful>() with scopedSingleton(androidActivityScope) {
+        SomethingUseful()
     }
 }

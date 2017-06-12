@@ -8,24 +8,11 @@ import com.github.salomonbrys.kodein.conf.ConfigurableKodein
 
 open class App : Application(), ApplicationInterface, KodeinAware {
 
-    val tempKodein = ConfigurableKodein(mutable = true)
-
     override fun addModule(module: Kodein.Module) {
-        tempKodein.clear()
-        tempKodein.addImport(module)
-        kodein.addExtend(tempKodein)
-    }
-
-    override fun setSomeKodein(kodein: ConfigurableKodein) {
-        this.kodein = kodein
-    }
-
-    override fun getSomeKodein(): ConfigurableKodein {
-        return this.kodein
+        kodein.addConfig { import(module, true) }
     }
 
     override var kodein = ConfigurableKodein(mutable = true)
-
 
     override fun getSystemService(name: String?): Any {
         when (name) {
@@ -33,9 +20,10 @@ open class App : Application(), ApplicationInterface, KodeinAware {
             else -> return super.getSystemService(name)
         }
     }
-
-
-
 }
 
-fun Context.iNeedSomeKodein() = (applicationContext as App).kodein
+fun Context.asApp() = applicationContext as App
+
+fun Context.iNeedSomeKodein() = this.asApp().kodein
+
+infix fun Context.addModule(module: Kodein.Module) = this.asApp().addModule(module)
