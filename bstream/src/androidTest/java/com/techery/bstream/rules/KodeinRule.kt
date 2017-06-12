@@ -1,7 +1,8 @@
-package com.techery.bstream
+package com.techery.bstream.rules
 
 import android.content.Context
 import com.github.salomonbrys.kodein.Kodein
+import com.techery.bstream.BStreamTestApp
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
