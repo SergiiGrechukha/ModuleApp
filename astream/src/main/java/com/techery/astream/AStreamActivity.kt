@@ -12,6 +12,7 @@ import com.techery.astream.di.aStreamModule
 import com.techery.core.SomethingUseful
 import com.techery.core.addModule
 import com.techery.core.iNeedSomeKodein
+import com.techery.core.routing.Router
 import kotlinx.android.synthetic.main.activity_a_stream.*
 
 class AStreamActivity : AppCompatActivity(), KodeinAware {
@@ -20,6 +21,7 @@ class AStreamActivity : AppCompatActivity(), KodeinAware {
 
     private val injector = KodeinInjector()
     private val somethingUseful: SomethingUseful by injector.with(this).instance<SomethingUseful>()
+    private val routerKodein: Router by injector.instance<Router>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,9 @@ class AStreamActivity : AppCompatActivity(), KodeinAware {
 
     private fun setUpUI() {
         streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${somethingUseful.getSomethingUseful()}"
+        streamText.setOnClickListener({
+            routerKodein.launchStreamB(this)
+        })
     }
 
     @SuppressLint("WrongConstant")

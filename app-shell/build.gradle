@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion project.compileSDK
@@ -30,6 +30,12 @@ android {
         streamB {
             dimension "stream"
         }
+        streamC {
+            dimension "stream"
+        }
+        streamD {
+            dimension "stream"
+        }
         full {
             dimension "stream"
         }
@@ -52,7 +58,11 @@ dependencies {
 
     streamAApi project(':astream')
     streamBApi project(':bstream')
+    streamCApi project(':cstream')
+    streamDApi project(':dstream')
 
     fullImplementation project(':astream')
     fullImplementation project(':bstream')
+    fullImplementation project(':cstream')
+    fullImplementation project(':dstream')
 }

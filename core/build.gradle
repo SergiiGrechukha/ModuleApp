@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion project.compileSDK
@@ -38,6 +38,7 @@ dependencies {
     compile 'com.github.salomonbrys.kodein:kodein-conf:4.0.0'
     compile 'com.github.salomonbrys.kodein:kodein-android:4.0.0'
 
+    compile 'com.android.support:multidex:1.0.1'
 
 
 }

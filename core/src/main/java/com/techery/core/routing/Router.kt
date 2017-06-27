@@ -1,4 +1,4 @@
-package com.techery.moduleapp.routing
+package com.techery.core.routing
 
 import android.content.Context
 
