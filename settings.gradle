@@ -1,1 +1,1 @@
-include ':app-shell', ':app', ':astream', ':bstream', ':core'
+include ':app-shell', ':app', ':astream', ':bstream', ':core', ':cstream', ':dstream'
