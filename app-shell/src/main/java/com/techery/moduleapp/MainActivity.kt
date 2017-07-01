@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         injectDeps()
         setUpUI()
-        println("123new string in java")
     }
 
     @SuppressLint("WrongConstant")
