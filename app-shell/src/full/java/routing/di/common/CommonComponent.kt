@@ -1,5 +1,7 @@
-package com.techery.moduleapp.di.common
+package routing.di.common
 
+import com.techery.astream.di.StreamACommon
+import com.techery.bstream.di.StreamBCommon
 import com.techery.moduleapp.App
 import com.techery.moduleapp.di.sub.ShellComponent
 import dagger.Component
@@ -7,7 +9,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = arrayOf(CommonModule::class))
-interface CommonComponent {
+interface CommonComponent : StreamACommon, StreamBCommon {
     fun inject(app: App)
     fun shellSubComponent(): ShellComponent.Builder
 }

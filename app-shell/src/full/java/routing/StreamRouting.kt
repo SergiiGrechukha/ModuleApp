@@ -8,11 +8,11 @@ import com.techery.moduleapp.routing.Router
 
 class StreamRouting : Router {
 
-    override fun launchStreamA(context : Context) {
+    override fun launchStreamA(context: Context) {
         context.startActivity(Intent(context, AStreamActivity::class.java))
     }
 
-    override fun launchStreamB(context : Context) {
+    override fun launchStreamB(context: Context) {
         context.startActivity(Intent(context, BStreamActivity::class.java))
     }
 }
