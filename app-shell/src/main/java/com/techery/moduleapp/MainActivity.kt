@@ -1,14 +1,13 @@
 package com.techery.moduleapp
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.instance
 import com.techery.core.addModule
 import com.techery.core.iNeedSomeKodein
-import com.techery.moduleapp.di.mainActivityModule
 import com.techery.core.routing.Router
+import com.techery.moduleapp.di.mainActivityModule
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         setUpUI()
     }
 
-    @SuppressLint("WrongConstant")
     private fun injectDeps() {
         application addModule mainActivityModule
         injector.inject(this.iNeedSomeKodein())

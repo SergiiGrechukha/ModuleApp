@@ -3,12 +3,14 @@ package com.techery.astream
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.github.salomonbrys.kodein.KodeinAware
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.conf.ConfigurableKodein
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.with
 import com.techery.astream.di.aStreamModule
+import com.techery.astream.stubs.SampleClass0
 import com.techery.core.SomethingUseful
 import com.techery.core.addModule
 import com.techery.core.iNeedSomeKodein
@@ -36,6 +38,7 @@ class AStreamActivity : AppCompatActivity(), KodeinAware {
         streamText.setOnClickListener({
             routerKodein.launchStreamB(this)
         })
+        Log.d("TAG", SampleClass0().className)
     }
 
     @SuppressLint("WrongConstant")

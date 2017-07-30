@@ -3,12 +3,14 @@ package com.techery.bstream
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.github.salomonbrys.kodein.KodeinAware
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.conf.ConfigurableKodein
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.with
-import com.techery.astream.di.bStreamModule
+import com.techery.bstream.di.bStreamModule
+import com.techery.bstream.stubs.SampleClass2000
 import com.techery.core.*
 import kotlinx.android.synthetic.main.activity_b_stream.*
 
@@ -29,6 +31,8 @@ class BStreamActivity : AppCompatActivity(), KodeinAware {
 
     private fun setUpUI() {
         streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${somethingUseful.getSomethingUseful()}"
+
+        Log.d("TAG", SampleClass2000().className)
     }
 
     @SuppressLint("WrongConstant")

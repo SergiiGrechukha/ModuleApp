@@ -45,24 +45,20 @@ android {
 
 dependencies {
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
-
-    streamAApi project(':astream')
-    streamBApi project(':bstream')
-    streamCApi project(':cstream')
-    streamDApi project(':dstream')
+    streamAImplementation project(':astream')
+    streamBImplementation project(':bstream')
+    streamCImplementation project(':cstream')
+    streamDImplementation project(':dstream')
 
     fullImplementation project(':astream')
     fullImplementation project(':bstream')
     fullImplementation project(':cstream')
     fullImplementation project(':dstream')
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
 }
