@@ -3,14 +3,27 @@ package com.techery.astream
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.techery.astream.di.StreamACommon
+import android.util.Log
+import com.github.salomonbrys.kodein.KodeinAware
+import com.github.salomonbrys.kodein.KodeinInjector
+import com.github.salomonbrys.kodein.conf.ConfigurableKodein
+import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.with
+import com.techery.astream.di.aStreamModule
+import com.techery.astream.stubs.SampleClass0
 import com.techery.core.SomethingUseful
+import com.techery.core.addModule
+import com.techery.core.iNeedSomeKodein
+import com.techery.core.routing.Router
 import kotlinx.android.synthetic.main.activity_a_stream.*
-import javax.inject.Inject
 
-class AStreamActivity : AppCompatActivity() {
+class AStreamActivity : AppCompatActivity(), KodeinAware {
 
-    @Inject lateinit var somethingUseful: SomethingUseful
+    override val kodein = ConfigurableKodein()
+
+    private val injector = KodeinInjector()
+    private val somethingUseful: SomethingUseful by injector.with(this).instance<SomethingUseful>()
+    private val routerKodein: Router by injector.instance<Router>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +35,15 @@ class AStreamActivity : AppCompatActivity() {
 
     private fun setUpUI() {
         streamText.text = "ModuleName: ${BuildConfig.APPLICATION_ID}\ncore: ${somethingUseful.getSomethingUseful()}"
+        streamText.setOnClickListener({
+            routerKodein.launchStreamB(this)
+        })
+        Log.d("TAG", SampleClass0().className)
     }
 
     @SuppressLint("WrongConstant")
     private fun injectDeps() {
-        val component = (application.getSystemService("Dagger") as StreamACommon?)
-        if (component != null) {
-            component.streamAComponent().build().inject(this)
-
-        }
+        application addModule aStreamModule
+        injector.inject(this.iNeedSomeKodein())
     }
 }

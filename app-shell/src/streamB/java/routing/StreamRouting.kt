@@ -5,7 +5,7 @@ import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import com.techery.bstream.BStreamActivity
-import com.techery.moduleapp.routing.Router
+import com.techery.core.routing.Router
 
 class StreamRouting : Router {
 

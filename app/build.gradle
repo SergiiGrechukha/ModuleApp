@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion project.compileSDK
     buildToolsVersion project.buildTools
-
 
     defaultConfig {
         applicationId project.appID
@@ -14,7 +13,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -30,6 +28,12 @@ android {
             dimension "stream"
         }
         streamB {
+            dimension "stream"
+        }
+        streamC {
+            dimension "stream"
+        }
+        streamD {
             dimension "stream"
         }
         full {
