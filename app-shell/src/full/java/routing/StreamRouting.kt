@@ -2,9 +2,9 @@ package routing
 
 import android.content.Context
 import android.content.Intent
-import com.techery.astream.AStreamActivity
-import com.techery.bstream.BStreamActivity
-import com.techery.core.routing.Router
+import com.loki.astream.AStreamActivity
+import com.loki.bstream.BStreamActivity
+import com.loki.core.routing.Router
 
 class StreamRouting : Router {
 

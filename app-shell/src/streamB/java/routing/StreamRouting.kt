@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.techery.bstream.BStreamActivity
-import com.techery.core.routing.Router
+import com.loki.bstream.BStreamActivity
+import com.loki.core.routing.Router
 
 class StreamRouting : Router {
 
