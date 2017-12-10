@@ -25,7 +25,7 @@ import org.mockito.MockitoAnnotations
 
 class BStreamActivityTests {
 
-    val MOCK_TEXT = "I am Mock"
+    private val MOCK_TEXT = "I am Mock"
 
     var mockModule: Kodein.Module
 
@@ -42,7 +42,7 @@ class BStreamActivityTests {
         }
     }
 
-    val kodeinRule = KodeinRule(InstrumentationRegistry.getTargetContext(), mockModule)
+    private val kodeinRule = KodeinRule(InstrumentationRegistry.getTargetContext(), mockModule)
 
     private val mActivityRule = ActivityTestRule<BStreamActivity>(BStreamActivity::class.java, false, false)
 

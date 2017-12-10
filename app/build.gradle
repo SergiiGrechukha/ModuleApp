@@ -26,9 +26,11 @@ android {
     productFlavors {
         streamA {
             dimension "stream"
+
         }
         streamB {
             dimension "stream"
+
         }
         streamC {
             dimension "stream"
