@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion project.compileSDK
-    buildToolsVersion project.buildTools
     defaultConfig {
 
         minSdkVersion project.minSDK
@@ -40,9 +39,6 @@ android {
             dimension "stream"
         }
     }
-
-
-    buildToolsVersion '26.0.2'
 }
 
 

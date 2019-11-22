@@ -3,16 +3,16 @@ apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion project.compileSDK
-    buildToolsVersion project.buildTools
 
     defaultConfig {
-        applicationId project.appID
+//        applicationId project.appID
         minSdkVersion project.minSDK
         targetSdkVersion project.targetSDK
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -46,4 +46,5 @@ android {
 
 dependencies {
     implementation project(':app-shell')
+    implementation "com.android.support:multidex:$project.multiDexVersion"
 }
