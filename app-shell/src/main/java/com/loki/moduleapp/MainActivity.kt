@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.instance
+import com.loki.core.BuildConfig
 import com.loki.core.addModule
 import com.loki.core.iNeedSomeKodein
 import com.loki.core.routing.Router
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val injector = KodeinInjector()
-    private val routerKodein: Router by injector.instance<Router>()
+    private val routerKodein: Router by injector.instance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +31,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpUI() {
 
-        btnStreamA.setOnClickListener({
+        btnStreamA.setOnClickListener {
             routerKodein.launchStreamA(this)
-        })
+        }
 
-        btnStreamB.setOnClickListener({
+        btnStreamB.setOnClickListener {
             routerKodein.launchStreamB(this)
-        })
+        }
 
         currentFlavor.text = getCurrentFlavor()
     }
